@@ -141,6 +141,8 @@ import FLAnimatedImage_tvOS
     fileprivate var transitionController: AXPhotosTransitionController?
     fileprivate let notificationCenter = NotificationCenter()
     
+    public var productName: String = ""
+    
     // MARK: - Initialization
     @objc public init() {
         super.init(nibName: nil, bundle: nil)
@@ -429,6 +431,7 @@ import FLAnimatedImage_tvOS
                 
                 self.overlayView(self.overlayView, visibilityWillChange: visible)
             })
+            UIAccessibility.post(notification: .screenChanged, argument: overlayView.leftBarButtonItem)
             self.isFirstAppearance = false
         }
     }
@@ -825,6 +828,22 @@ import FLAnimatedImage_tvOS
         var highIndex: Int = NSNotFound
         
         let viewControllers = self.computeVisibleViewControllers(in: scrollView)
+        
+        if UIAccessibility.isVoiceOverRunning {
+            guard let pageIndex = viewControllers.first?.pageIndex else { return }
+            viewControllers.first?.zoomingImageView.accessibilityLabel = "\(productName) image \(pageIndex + 1) of \(dataSource.numberOfPhotos)"
+            self.updateOverlay(for: pageIndex)
+        } else {
+            var photoViewController: AXPhotoViewController?
+            if horizontalSwipeDirection == .left {
+                photoViewController = viewControllers.first
+            } else if horizontalSwipeDirection == .right {
+                photoViewController = viewControllers.last
+            }
+            guard let pageIndex = photoViewController?.pageIndex else { return }
+            photoViewController?.zoomingImageView.accessibilityLabel = "\(productName) image \(pageIndex + 1) of \(dataSource.numberOfPhotos)"
+        }
+        
         if horizontalSwipeDirection == .left {
             guard let viewController = viewControllers.first else { return }
             

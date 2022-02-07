@@ -75,6 +75,8 @@ class AXZoomingImageView: UIScrollView, UIScrollViewDelegate {
         self.decelerationRate = .fast
         self.delegate = self
         
+        self.isAccessibilityElement = true
+        
         if #available(iOS 11.0, tvOS 11.0, *) {
             self.contentInsetAdjustmentBehavior = .never
         }

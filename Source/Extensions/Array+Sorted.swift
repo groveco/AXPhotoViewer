@@ -6,6 +6,9 @@
 //  Copyright © 2017 Alex Hill. All rights reserved.
 //
 
+import Foundation
+import UIKit
+
 extension Array {
     
     func insertionIndex(of element: Element, isOrderedBefore: (Element, Element) -> Bool) -> (index: Int, alreadyExists: Bool) {

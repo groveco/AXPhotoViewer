@@ -6,6 +6,8 @@
 //  Copyright © 2017 Alex Hill. All rights reserved.
 //
 
+import Foundation
+
 @objc protocol AXPageableViewControllerProtocol: class {
     
     var pageIndex: Int { get set }

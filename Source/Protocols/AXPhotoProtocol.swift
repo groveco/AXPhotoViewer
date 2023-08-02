@@ -6,6 +6,9 @@
 //  Copyright © 2017 Alex Hill. All rights reserved.
 //
 
+import Foundation
+import UIKit
+
 @objc public protocol AXPhotoProtocol: AnyObject, NSObjectProtocol {
     
     /// The attributed title of the image that will be displayed in the photo's `captionView`.

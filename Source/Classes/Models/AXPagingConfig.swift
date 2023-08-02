@@ -6,6 +6,9 @@
 //  Copyright © 2017 Alex Hill. All rights reserved.
 //
 
+import Foundation
+import UIKit
+
 fileprivate let DefaultHorizontalSpacing: CGFloat = 20
 
 @objc open class AXPagingConfig: NSObject {

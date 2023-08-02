@@ -6,6 +6,7 @@
 //  Copyright © 2017 Alex Hill. All rights reserved.
 //
 
+import Foundation
 import ImageIO
 import MobileCoreServices
 

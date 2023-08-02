@@ -5,7 +5,8 @@
 //  Created by Alex Hill on 6/3/17.
 //  Copyright © 2017 Alex Hill. All rights reserved.
 //
-
+import Foundation
+import UIKit
 /// A simple wrapper class for `AXPhotoProtocol`.
 @objc open class AXPhoto: NSObject, AXPhotoProtocol {
     

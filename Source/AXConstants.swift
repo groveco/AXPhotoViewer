@@ -6,6 +6,9 @@
 //
 //
 
+import Foundation
+import UIKit
+
 @objc public class AXConstants: NSObject {
     
     @objc public static let frameAnimDuration: TimeInterval = 0.25

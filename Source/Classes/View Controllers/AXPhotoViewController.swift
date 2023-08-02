@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AXPhotoViewerObjc
 
 #if os(iOS)
 import FLAnimatedImage

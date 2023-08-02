@@ -7,6 +7,10 @@
 //
 
 #if os(iOS)
+
+import UIKit
+import Foundation
+
 extension UIInterfaceOrientation {
     
     func by(transforming transform: CGAffineTransform) -> UIInterfaceOrientation {

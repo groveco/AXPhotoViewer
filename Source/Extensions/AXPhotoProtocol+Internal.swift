@@ -6,11 +6,9 @@
 //  Copyright © 2017 Alex Hill. All rights reserved.
 //
 
-#if os(iOS)
-import FLAnimatedImage.FLAnimatedImage
-#elseif os(tvOS)
-import FLAnimatedImage_tvOS.FLAnimatedImage
-#endif
+import FLAnimatedImage;
+import Foundation
+import UIKit
 
 enum AXPhotoLoadingState {
     case notLoaded, loading, loaded, loadingCancelled, loadingFailed

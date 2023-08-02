@@ -6,6 +6,8 @@
 //  Copyright © 2017 Alex Hill. All rights reserved.
 //
 
+import Foundation
+
 let AXNetworkIntegrationErrorDomain = "AXNetworkIntegrationErrorDomain"
 let AXNetworkIntegrationFailedToLoadErrorCode = 6
 

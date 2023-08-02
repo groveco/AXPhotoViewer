@@ -6,6 +6,9 @@
 //  Copyright © 2017 Alex Hill. All rights reserved.
 //
 
+import Foundation
+import UIKit
+
 @objc open class AXTransitionInfo: NSObject {
     
     #if os(iOS)

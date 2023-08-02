@@ -8,6 +8,7 @@
 
 import UIKit
 import MobileCoreServices
+import AXPhotoViewerObjc
 
 #if os(iOS)
 import FLAnimatedImage

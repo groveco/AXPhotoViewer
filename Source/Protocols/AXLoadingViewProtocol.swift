@@ -6,6 +6,8 @@
 //  Copyright © 2017 Alex Hill. All rights reserved.
 //
 
+import Foundation
+
 @objc public protocol AXLoadingViewProtocol: NSObjectProtocol {
     
     /// Called by the AXPhotoViewController when progress of the image download should be shown to the user.

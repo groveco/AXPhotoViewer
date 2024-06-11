@@ -21,6 +21,7 @@ import UIKit
         self.attributedTitle = attributedTitle
         self.attributedDescription = attributedDescription
         self.attributedCredit = attributedCredit
+        self.accessibilityText = accessibilityText
         self.imageData = imageData
         self.image = image
         self.url = url

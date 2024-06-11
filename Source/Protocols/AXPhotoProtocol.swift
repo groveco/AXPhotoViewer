@@ -20,6 +20,9 @@ import UIKit
     /// The attributed credit of the image that will be displayed in the photo's `captionView`.
     @objc optional var attributedCredit: NSAttributedString? { get }
     
+    /// The accessibility text for an image
+    @objc optional var accessibiltyText: String? { get }
+
     /// The image data. If this value is present, it will be prioritized over `image`.
     /// Provide animated GIF data to this property.
     @objc var imageData: Data? { get set }

@@ -13,6 +13,7 @@ import UIKit
     @objc public init(attributedTitle: NSAttributedString? = nil,
                       attributedDescription: NSAttributedString? = nil,
                       attributedCredit: NSAttributedString? = nil,
+                      accessibilityText: String? = nil,
                       imageData: Data? = nil,
                       image: UIImage? = nil,
                       url: URL? = nil) {
@@ -20,6 +21,7 @@ import UIKit
         self.attributedTitle = attributedTitle
         self.attributedDescription = attributedDescription
         self.attributedCredit = attributedCredit
+        self.accessibilityText = accessibilityText
         self.imageData = imageData
         self.image = image
         self.url = url
@@ -36,6 +38,9 @@ import UIKit
     /// The attributed credit of the image that will be displayed in the photo's `overlay`.
     @objc public var attributedCredit: NSAttributedString?
     
+    /// The accessibility text for an image
+    @objc public var accessibilityText: String?
+
     /// The image data. If this value is present, it will be prioritized over `image`.
     /// Provide animated GIF data to this property.
     @objc public var imageData: Data?

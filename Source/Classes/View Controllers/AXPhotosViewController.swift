@@ -829,10 +829,10 @@ import FLAnimatedImage_tvOS
         var highIndex: Int = NSNotFound
         
         let viewControllers = self.computeVisibleViewControllers(in: scrollView)
-        
+
         if UIAccessibility.isVoiceOverRunning {
             guard let pageIndex = viewControllers.first?.pageIndex else { return }
-            viewControllers.first?.zoomingImageView.accessibilityLabel = "\(productName) image \(pageIndex + 1) of \(dataSource.numberOfPhotos)"
+            viewControllers.first?.zoomingImageView.accessibilityLabel = configureAccesibilityText(index: pageIndex)
             self.updateOverlay(for: pageIndex)
         } else {
             var photoViewController: AXPhotoViewController?
@@ -842,9 +842,9 @@ import FLAnimatedImage_tvOS
                 photoViewController = viewControllers.last
             }
             guard let pageIndex = photoViewController?.pageIndex else { return }
-            photoViewController?.zoomingImageView.accessibilityLabel = "\(productName) image \(pageIndex + 1) of \(dataSource.numberOfPhotos)"
+            photoViewController?.zoomingImageView.accessibilityLabel = configureAccesibilityText(index: pageIndex)
         }
-        
+
         if horizontalSwipeDirection == .left {
             guard let viewController = viewControllers.first else { return }
             
@@ -917,7 +917,15 @@ import FLAnimatedImage_tvOS
         
         return visibleViewControllers
     }
-    
+
+    private func configureAccesibilityText(index: Int) -> String {
+        if let accessibilityText = dataSource.photo(at: index)?.accessibiltyText {
+            return accessibilityText
+        } else {
+            return "\(productName) image \(index + 1) of \(dataSource.numberOfPhotos)"
+        }
+    }
+
     // MARK: - UIPageViewControllerDataSource
     public func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         guard let viewController = pendingViewControllers.first as? AXPhotoViewController else { return }

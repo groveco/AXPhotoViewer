@@ -21,7 +21,7 @@ import UIKit
     @objc optional var attributedCredit: NSAttributedString? { get }
     
     /// The accessibility text for an image
-    @objc optional var accessibiltyText: String? { get }
+    @objc var accessibiltyText: String? { get }
 
     /// The image data. If this value is present, it will be prioritized over `image`.
     /// Provide animated GIF data to this property.

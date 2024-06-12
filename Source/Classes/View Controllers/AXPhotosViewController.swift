@@ -919,8 +919,8 @@ import FLAnimatedImage_tvOS
     }
 
     private func configureAccesibilityText(index: Int) -> String {
-        if let accessibilityText = dataSource.photo(at: index)?.accessibiltyText {
-            return accessibilityText
+        if let accessibilityText = dataSource.photo(at: index)?.accessibilityText {
+            return accessibilityText ?? ""
         } else {
             return "\(productName) image \(index + 1) of \(dataSource.numberOfPhotos)"
         }
